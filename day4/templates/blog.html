@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post </title>
+</head>
+<body>
+    <h1>My Blog Post</h1>
+    {%if posts %}
+        {%for post in posts %}
+        <div class="post " style="margin-bottom: 20px; border-bottom: 1px solid #ccc;">
+            <h2>{{ post.title }}</h2>
+            <p class="author">by {{ post.author }} on {{ post.date }}</p>
+            <p>{{ post.content }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No posts available.</p>
+    {% endif %}
+</body>
+</html>
